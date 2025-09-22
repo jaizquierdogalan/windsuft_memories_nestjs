@@ -151,7 +151,7 @@ services:
       target: runner
       args:
         NODE_VERSION: "20.15.1"
-    image: myorg/hireful-kpis:latest
+    image: org/service:latest
     ports:
       - "3000:3000"
     environment:

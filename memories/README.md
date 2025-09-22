@@ -15,13 +15,13 @@ Prerequisites:
 
 One-liner (public repo):
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jaizquierdogalan/windsuft_memories/master/memories/install_windsurf_global_rules.sh \
-  | REPO_URL="https://github.com/jaizquierdogalan/windsuft_memories.git" bash
+curl -fsSL https://raw.githubusercontent.com/jaizquierdogalan/windsuft_memories_nestjs/master/memories/install_windsurf_global_rules.sh \
+  | REPO_URL="https://github.com/jaizquierdogalan/windsuft_memories_nestjs.git" bash
 ```
 Tarball fallback (no git required):
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jaizquierdogalan/windsuft_memories/master/memories/install_windsurf_global_rules.sh \
-  | REPO_TARBALL_URL="https://github.com/jaizquierdogalan/windsuft_memories/archive/refs/heads/master.tar.gz" bash
+curl -fsSL https://raw.githubusercontent.com/jaizquierdogalan/windsuft_memories_nestjs/master/memories/install_windsurf_global_rules.sh \
+  | REPO_TARBALL_URL="https://github.com/jaizquierdogalan/windsuft_memories_nestjs/archive/refs/heads/master.tar.gz" bash
 ```
 
 Install (from the repository root):

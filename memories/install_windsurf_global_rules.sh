@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Default repository if none provided
+: ${REPO_URL:="https://github.com/jaizquierdogalan/windsuft_memories_nestjs.git"}
+
 # Install this memories/ directory as Windsurf Global Rules
 # Target: ~/.codeium/windsurf/memories
 #

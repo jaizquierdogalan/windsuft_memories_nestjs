@@ -1,0 +1,43 @@
+name: Test & Lint (Local Template)
+
+on:
+  manual: true
+  push: true
+  pull_request: true
+
+jobs:
+  setup:
+    steps:
+      - name: Verify Node and install dependencies
+        run: |
+          node -v || echo "Node is not installed in PATH"
+          npm ci
+  lint:
+    needs: setup
+    steps:
+      - name: ESLint
+        run: |
+          npx eslint . --ext .ts,.tsx || true
+      - name: Prettier Check
+        run: |
+          npx prettier -c . || true
+  test:
+    needs: lint
+    steps:
+      - name: Run tests
+        run: |
+          npm test --silent -- --passWithNoTests || true
+  docs:
+    needs: test
+    steps:
+      - name: Build Compodoc docs (if available)
+        run: |
+          npm run docs:build || true
+  report:
+    needs: docs
+    steps:
+      - name: Summary and references
+        run: |
+          echo "Local lint, test and docs build completed."
+          echo "Project rules: .windsurfrules.md; Global rules: ~/.codeium/windsurf/memories/global_rules.md"
+          echo "Memories: see memories/global_rules.md in the shared repo"

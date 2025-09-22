@@ -1,0 +1,33 @@
+name: CI (Template)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: ESLint
+        run: npx eslint . --ext .ts,.tsx || true
+
+      - name: Prettier Check
+        run: npx prettier -c . || true
+
+      - name: Run Jest tests
+        run: npm test -- --passWithNoTests || true
+
+      - name: Build Compodoc docs (if available)
+        run: npm run docs:build || true

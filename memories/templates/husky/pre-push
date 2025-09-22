@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+# Allow long-lived branches and enforce conventional short-lived ones
+if ! printf "%s" "$branch_name" | grep -Eq '^(main|master|staging|dev)$|^(feat|fix|chore|refactor|docs|test|ci|build|perf|style)/[a-z0-9._-]+$'; then
+  echo "Invalid branch name: $branch_name" >&2
+  echo "Use: <type>/<short-kebab>, where <type> is one of:" >&2
+  echo "feat, fix, chore, refactor, docs, test, ci, build, perf, style" >&2
+  exit 1
+fi
+
+exit 0

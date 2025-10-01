@@ -80,3 +80,21 @@ This document serves as the central index for all project guidelines. Each secti
 
 ### 19. [Discord Bots with Necord](guidelines/19_discord_necord.md)
 - Structure and principles for Discord bots built with Necord in NestJS
+
+### 20. [Docker Container Baseline](guidelines/20_docker_container_baseline.md)
+- Docker best practices for containerized applications
+
+### 21. [Architecture Compliance Checklist](guidelines/21_architecture_compliance_checklist.md)
+- Systematic approach to detect and fix common architectural violations
+- CQRS handlers returning DTOs
+- API pagination and limits enforcement
+- Hexagonal architecture layer boundaries
+- Domain models as interfaces with factories
+- Input validation with class-validator
+
+### 22. [NestJS Monorepo Setup](guidelines/22_nestjs_monorepo_setup.md)
+- Step-by-step guide to convert single app to monorepo
+- Multiple apps and shared libraries structure
+- GraphQL Federation setup
+- Deployment strategies (monolith vs microservices)
+- Best practices and common issues

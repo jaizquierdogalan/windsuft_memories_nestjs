@@ -98,3 +98,10 @@ This document serves as the central index for all project guidelines. Each secti
 - GraphQL Federation setup
 - Deployment strategies (monolith vs microservices)
 - Best practices and common issues
+
+### 27. [Prisma + GraphQL Type Generation with PalJS](guidelines/27_prisma_graphql_generation.md)
+- Prisma as ORM and schema source of truth
+- @paljs/generator for GraphQL type generation from Prisma schema
+- PrismaSelect plugin for query optimization
+- Workflow: schema changes → generation → frontend types
+- Best practices and common issues
